@@ -1,0 +1,7 @@
+data
+__pycache__/
+optimize_filter/PyTorch_CIFAR10/cifar10_models/state_dicts
+clean_encoder
+*.pt
+*.pkl
+*.pth
