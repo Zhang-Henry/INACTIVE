@@ -1,12 +1,12 @@
 # IMPERATIVE
 This repository contains the code of [IMPERATIVE], an imperceptible and effective backdoor attack against self-supervised models.
-Here is an overview of our IMPERATIVE:
+<!-- Here is an overview of our IMPERATIVE:
 
 
 
 <div align="center">
 <img width="100%" alt="IMPERATIVE" src="imperative.png">
-</div>
+</div> -->
 
 
 ## Required python packages

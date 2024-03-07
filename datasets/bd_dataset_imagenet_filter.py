@@ -206,7 +206,6 @@ class BadEncoderDataset(VisionDataset):
         """
         path, target = self.samples[self.indices[index]]
         sample = self.loader(path)
-        # sample.save("/data/local/wzt/model_fix/BadEncoder/imagenet_filter.jpg")
 
         sample = transforms.Resize((224, 224))(sample)
         img = sample

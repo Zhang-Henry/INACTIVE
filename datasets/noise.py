@@ -28,11 +28,11 @@ def randomJPEGcompression(image):
     outputIoStream.seek(0)
     return Image.open(outputIoStream)
 
-# def JPEGcompression(image, quality=1):
-#     outputIoStream = BytesIO()
-#     image.save(outputIoStream, "JPEG", quality=quality, optimize=True)
-#     outputIoStream.seek(0)
-#     return Image.open(outputIoStream)
+def JPEGcompression(image, quality=1):
+    outputIoStream = BytesIO()
+    image.save(outputIoStream, "JPEG", quality=quality, optimize=True)
+    outputIoStream.seek(0)
+    return Image.open(outputIoStream)
 
 
 

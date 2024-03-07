@@ -132,41 +132,6 @@ class BadEncoderTestBackdoor(Dataset):
 
     def __getitem__(self,index):
         img = copy.deepcopy(self.data[index])
-
-        ###########################
-        ### for ins filter only ###
-
-        # image_pil = Image.fromarray(img)
-        # filtered_image_pil = pilgram.xpro2(image_pil)
-        # img_backdoor =self.test_transform(filtered_image_pil)
-
-        ###########################
-
-        # img[:] =img * self.trigger_mask_list[0] + self.trigger_patch_list[0][:]
-        # img_backdoor =self.test_transform(Image.fromarray(img))
-
-
-        ###########################
-        # for ctrl only
-        # trans=transforms.Compose([
-        #         transforms.ToTensor(),
-        #     ])
-
-        # image_pil = Image.fromarray(img)
-        # tensor_image = trans(image_pil)
-
-        # base_image=tensor_image.unsqueeze(0)
-        # poison_frequency_agent = PoisonFre('args',32, [1,2], 32, [15,31],  False,  True)
-
-        # x_tensor,_ = poison_frequency_agent.Poison_Frequency_Diff(base_image,0, 100.0)
-        # img_backdoor = x_tensor.squeeze()
-
-        # # img_backdoor = np.clip(img_backdoor, 0, 1) #限制颜色范围在0-1
-
-        # img_backdoor = self.test_transform(img_backdoor.permute(1,2,0).detach().numpy())
-
-
-        ########################
         img = Image.fromarray(img)
         img_backdoor =self.test_transform(img)
 

@@ -40,19 +40,6 @@ def test(net, memory_data_loader, test_data_clean_loader, test_data_backdoor_loa
         test_bar = tqdm(test_data_backdoor_loader)
         for data, target in test_bar:
             data, target = data.cuda(non_blocking=True), target.cuda(non_blocking=True)
-            ###########################
-            # for customized filter only
-
-            # filter=torch.load('trigger/filter.pt')
-            # data = F.conv2d(data, filter, padding=3//2)
-
-            ###########################
-            ############## add filter to backdoor img
-            # data=filter(data)
-            # sig=nn.Sigmoid()
-            # data=sig(data)
-            # data = torch.clamp(data, min=0, max=1)
-
 
             feature = net(data)
             feature = F.normalize(feature, dim=1)

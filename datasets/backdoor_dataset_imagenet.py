@@ -236,7 +236,6 @@ class BadEncoderDataset(VisionDataset):
         """
         path, target = self.samples[self.indices[index]]
         sample = self.loader(path)
-        # sample.save("/data/local/wzt/model_fix/BadEncoder/imagenet_filter.jpg")
 
         sample = transforms.Resize((224, 224))(sample)
         img = sample
@@ -253,119 +252,9 @@ class BadEncoderDataset(VisionDataset):
 
         img_backdoor_list = []
         for i in range(len(self.target_image_list)):
-            ###########################
-            ### for ins filter only ###
-
-            # image_pil = Image.fromarray(img_copy)
-            # filtered_image_pil = pilgram.kelvin(image_pil)  # 使用 _1977, xpro2, kelvin 滤镜
-
-            # backdoored_image = np.array(filtered_image_pil)  # 将 PIL Image 对象转换回 NumPy 数组
-            # img_backdoor =self.bd_transform(Image.fromarray(backdoored_image))
-
-            ###########################
-            ### origin ###
-
-            # backdoored_image[:,:,:] = img_copy * self.trigger_mask_list[i] + self.trigger_patch_list[i][:]
-            # img_backdoor =self.bd_transform(Image.fromarray(backdoored_image))
-
-            ###########################
-            # for customized filter only
-
-            # img_copy=torch.Tensor(img_copy)
-            # backdoored_image = F.conv2d(img_copy.permute(2, 0, 1), self.filter, padding=7//2)
-            # img_backdoor = self.bd_transform(backdoored_image.permute(1,2,0).detach().numpy())
-
-            ###########################
-            # for unet filter
-            # trans=transforms.Compose([
-            #         transforms.ToTensor()
-            #     ])
-
-            # image_pil = Image.fromarray(img_copy)
-            # tensor_image = trans(image_pil)
-            # backdoored_image=self.net(tensor_image.unsqueeze(0))
-            # img_backdoor = backdoored_image.squeeze()
-            # sig = nn.Sigmoid()
-            # img_backdoor = sig(img_backdoor)
-            # img_backdoor = self.bd_transform(img_backdoor.permute(1,2,0).detach().numpy())
-
-            ###########################
-            # for ctrl only
-            # trans=transforms.Compose([
-            #         transforms.ToTensor()
-            #     ])
-
-            # image_pil = Image.fromarray(img_copy)
-            # tensor_image = trans(image_pil)
-
-            # base_image=tensor_image.unsqueeze(0)
-            # poison_frequency_agent = PoisonFre('args',32, [1,2], 32, [15,31],  False,  True)
-
-            # x_tensor,_ = poison_frequency_agent.Poison_Frequency_Diff(base_image,0, 100.0)
-            # img_backdoor = x_tensor.squeeze()
-            # # img_backdoor = np.clip(img_backdoor, 0, 1) #限制颜色范围在0-1
-
-            # img_backdoor = self.bd_transform(img_backdoor)
-
-            ###########################
-            # tensor_image = torch.Tensor(img_copy)
-            # backdoored_image=self.net(tensor_image.permute(2, 0, 1).unsqueeze(0))
-            # img_backdoor = backdoored_image.squeeze()
-            # img_backdoor = self.bd_transform(img_backdoor.permute(1,2,0).detach().numpy())
-
-            ########################### ISSBA
-            # secret = 'a'
-            # secret_size = 100
-            # model_path = 'datasets/ISSBA/ckpt/encoder_imagenet'
-
-            # sess = tf.compat.v1.InteractiveSession(graph=tf.Graph())
-            # model = tf.compat.v1.saved_model.loader.load(sess, [tag_constants.SERVING], model_path)
-
-            # input_secret_name = model.signature_def[signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY].inputs['secret'].name
-            # input_image_name = model.signature_def[signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY].inputs['image'].name
-            # input_secret =  tf.compat.v1.get_default_graph().get_tensor_by_name(input_secret_name)
-            # input_image =  tf.compat.v1.get_default_graph().get_tensor_by_name(input_image_name)
-
-            # output_stegastamp_name = model.signature_def[signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY].outputs['stegastamp'].name
-            # output_residual_name = model.signature_def[signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY].outputs['residual'].name
-            # output_stegastamp =  tf.compat.v1.get_default_graph().get_tensor_by_name(output_stegastamp_name)
-            # output_residual =  tf.compat.v1.get_default_graph().get_tensor_by_name(output_residual_name)
-            # width = 224
-            # height = 224
-
-            # BCH_POLYNOMIAL = 137
-            # BCH_BITS = 5
-            # bch = bchlib.BCH(BCH_POLYNOMIAL, BCH_BITS)
-
-            # data = bytearray(secret + ' '*(7-len(secret)), 'utf-8')
-            # ecc = bch.encode(data)
-            # packet = data + ecc
-
-            # packet_binary = ''.join(format(x, '08b') for x in packet)
-            # secret = [int(x) for x in packet_binary]
-            # secret.extend([0, 0, 0, 0])
-            # image = np.array(img_copy, dtype=np.float32) / 255.
-
-            # feed_dict = {
-            #     input_secret:[secret],
-            #     input_image:[image]
-            #     }
-
-            # hidden_img, residual = sess.run([output_stegastamp, output_residual],feed_dict=feed_dict)
-
-            # hidden_img = (hidden_img[0] * 255).astype(np.uint8)
-            # im = Image.fromarray(np.array(hidden_img))
-
-            # img_backdoor = self.bd_transform(im)
-
-            ###################
-
 
             img_backdoor = self.bd_transform(backdoored_image)
-
             img_backdoor_list.append(img_backdoor)
-
-        # Image.fromarray(backdoored_image).save("/data/local/wzt/model_fix/BadEncoder/imagenet_backdoor.jpg")
 
         target_image_list_return, target_img_1_list_return = [], []
         for i in range(len(self.target_image_list)):
