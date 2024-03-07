@@ -24,14 +24,11 @@ def run_eval(gpu, encoder_usage_info, downstream_dataset, encoder, reference_lab
 
 
 
-# run_eval(0, 'cifar10', 'stl10', 'output/cifar10/stl10_backdoored_encoder/model.pth', 9, 'output/cifar10/stl10_backdoored_encoder/trigger_trained.pt', 'truck', 'backdoor') # color + loss0
-# run_eval(1, 'cifar10', 'gtsrb', 'output/cifar10/gtsrb_backdoored_encoder/model.pth', 12, 'output/cifar10/gtsrb_backdoored_encoder/trigger_trained.pt', 'priority', 'backdoor') # color + loss0
-# run_eval(1, 'cifar10', 'svhn', './output/cifar10/svhn_backdoored_encoder/model.pth', 1, 'output/cifar10/svhn_backdoored_encoder/trigger_trained.pt', 'one', 'backdoor') # color + loss0
 
 
-run_eval(1, 'stl10', 'cifar10', ' ./output/stl10/cifar10_backdoored_encoder/model.pth', 0, './output/stl10/cifar10_backdoored_encoder/trigger_trained.pt', 'airplane', 'backdoor')# color + loss0
-# run_eval(2, 'stl10', 'gtsrb', './output/stl10/gtsrb_backdoored_encoder/model.pth', 12, './output/stl10/gtsrb_backdoored_encoder/trigger_trained.pt', 'priority', 'backdoor')# color + loss0
-# run_eval(2, 'stl10', 'svhn', './output/stl10/svhn_backdoored_encoder/model.pth', 1, './output/stl10/svhn_backdoored_encoder/trigger_trained.pt', 'one', 'backdoor') # color + loss0
+run_eval(1, 'stl10', 'cifar10', ' ./output/stl10/cifar10_backdoored_encoder/model.pth', 0, './output/stl10/cifar10_backdoored_encoder/trigger_trained.pt', 'airplane', 'backdoor')
+# run_eval(2, 'stl10', 'gtsrb', './output/stl10/gtsrb_backdoored_encoder/model.pth', 12, './output/stl10/gtsrb_backdoored_encoder/trigger_trained.pt', 'priority', 'backdoor')
+# run_eval(2, 'stl10', 'svhn', './output/stl10/svhn_backdoored_encoder/model.pth', 1, './output/stl10/svhn_backdoored_encoder/trigger_trained.pt', 'one', 'backdoor')
 
 
 
