@@ -11,7 +11,7 @@ This repository contains the code of [IMPERATIVE], an imperceptible and effectiv
 
 ## Required python packages
 
-Our code is tested under the following environment: Ubuntu 22.04, cuda 11.8, Python 3.8.5, torch 2.0.1, torchvision 0.15.2, numpy 1.23.4, pandas 2.0.3, pillow 10.1.0, and tqdm 4.65.0.
+Our code is tested under the following environment: NVIDIA GeForce RTX 3090, Ubuntu 22.04, cuda 11.8, Python 3.8.5, torch 2.0.1, torchvision 0.15.2, numpy 1.23.4, pandas 2.0.3, pillow 10.1.0, and tqdm 4.65.0.
 
 ## Pretraining image encoders
 
@@ -22,7 +22,7 @@ To pre-train an image encoder on CIFAR10 or STL10, you could first download the 
 ```
 python3 scripts/run_pretraining_encoder.py
 ```
-You can also download pre-trained image encoders on CIFAR10 or STL10 from the following link [data](https://drive.google.com/drive/folders/1acJr1fP2paK6pNq2bL6lzPTccv6nSzX6?usp=sharing) and put them under output folder.
+It may take up more than 10 hours and 15G to pretrain the encoder on a NVIDIA GeForce RTX 3090. You can also download pre-trained image encoders on CIFAR10 or STL10 from the following link [data](https://drive.google.com/drive/folders/1acJr1fP2paK6pNq2bL6lzPTccv6nSzX6?usp=sharing) and put them under output folder.
 ## Pretraining backdoor injectors
 
 The file optimize_filter/run_pretrain.sh is a script used to pre-train a backdoor encoder.
@@ -32,6 +32,7 @@ You could run the following script in the optimize_filter directory to pre-train
 ```
 python3 scripts/run_pretrain.sh
 ```
+It may take up more than 5 hours and 10G to pretrain the backdoor injectors on a NVIDIA GeForce RTX 3090.
 ## IMPERATIVE
 
 The file imperative.py implements our IMPERATIVE.
@@ -41,7 +42,7 @@ You can use the following example script to optimize a imperative backdoor trigg
 ```
 python3 scripts/run_imperative.py
 ```
-
+It may take up more than 10 hours and 10G to pretrain the backdoor injectors on a NVIDIA GeForce RTX 3090.
 ## Training downstream classifiers
 
 The file training\_downstream\_classifier.py can be used to train a downstream classifier on a downstream task using an image encoder. Here are some example scripts:
@@ -51,12 +52,12 @@ python3 scripts/run_cifar10_training_downstream_classifier.py
 python3 scripts/run_imagenet_training_downstream_classifier.py
 ```
 
-
+It may take up more than 1 hours and 1G to pretrain the backdoor injectors on a NVIDIA GeForce RTX 3090.
 
 ## Experimental results
 
 
-This table shows the experimental results when the pre-training dataset is CIFAR10 and STL10:
+This table shows the experimental results when the pre-training dataset is CIFAR10 and STL10.
 
 | Pre-training Dataset | Downstream Dataset | CA    | WaNet BA↑ | WaNet ASR↑ | CTRL BA↑ | CTRL ASR↑ | Ins-kelvin BA↑ | Ins-kelvin ASR↑ | Ins-xpro2 BA↑ | Ins-xpro2 ASR↑ | Ours BA↑ | Ours ASR↑ |
 | -------------------- | ------------------ | ----- | --------- | ---------- | -------- | --------- | -------------- | --------------- | ------------- | -------------- | -------- | --------- |
