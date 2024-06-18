@@ -1,5 +1,5 @@
 # IMPERATIVE - Towards Imperceptible Backdoor Attack in Self-supervised Learning
-This repository contains the code of the paper "[Towards Imperceptible Backdoor Attack in Self-supervised Learning](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=qG5_O40AAAAJ&citation_for_view=qG5_O40AAAAJ:zYLM7Y9cAGgC)", an imperceptible and effective backdoor attack against self-supervised models. 
+This repository contains the code of the paper "[Towards Imperceptible Backdoor Attack in Self-supervised Learning](https://arxiv.org/abs/2405.14672)", an imperceptible and effective backdoor attack against self-supervised models. 
 <!-- Here is an overview of our IMPERATIVE:
 
 
