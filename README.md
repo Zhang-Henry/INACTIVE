@@ -9,6 +9,7 @@ This repository contains the code of the paper "[Towards Imperceptible Backdoor 
 </div> -->
 
 
+
 ## Required python packages
 
 Our code is tested under the following environment: NVIDIA GeForce RTX 3090, Ubuntu 22.04, cuda 11.8, Python 3.8.5, torch 2.0.1, torchvision 0.15.2, numpy 1.23.4, pandas 2.0.3, pillow 10.1.0, and tqdm 4.65.0.
@@ -81,6 +82,20 @@ We refer to the following code in our implementation:
 https://github.com/google-research/simclr,
 https://github.com/jinyuan-jia/BadEncoder,
 https://github.com/leftthomas/SimCLR
+
+## Citation
+
+If you use our code or data in this repo or find our work helpful, please consider giving a citation:
+```
+@misc{zhang2024imperceptible,
+      title={Towards Imperceptible Backdoor Attack in Self-supervised Learning}, 
+      author={Hanrong Zhang and Zhenting Wang and Tingxu Han and Mingyu Jin and Chenlu Zhan and Mengnan Du and Hongwei Wang and Shiqing Ma},
+      year={2024},
+      eprint={2405.14672},
+      archivePrefix={arXiv},
+      primaryClass={id='cs.CV' full_name='Computer Vision and Pattern Recognition' is_active=True alt_name=None in_archive='cs' is_general=False description='Covers image processing, computer vision, pattern recognition, and scene understanding. Roughly includes material in ACM Subject Classes I.2.10, I.4, and I.5.'}
+```
+}
 
 
 
