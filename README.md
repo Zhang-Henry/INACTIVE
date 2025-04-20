@@ -1,5 +1,5 @@
-# IMPERATIVE - Towards Imperceptible Backdoor Attack in Self-supervised Learning
-This repository contains the code of the **CVPR 2025** paper "[Towards Imperceptible Backdoor Attack in Self-supervised Learning](https://arxiv.org/abs/2405.14672)", an imperceptible and effective backdoor attack against self-supervised models. 
+# INACTIVE - Invisible Backdoor Attack against Self-supervised Learning
+This repository contains the code of the **CVPR 2025** paper "[Invisible Backdoor Attack against Self-supervised Learning](https://arxiv.org/abs/2405.14672)", an imperceptible and effective backdoor attack against self-supervised models. 
 <!-- Here is an overview of our IMPERATIVE:
 
 
