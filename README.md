@@ -88,7 +88,7 @@ https://github.com/leftthomas/SimCLR
 If you use our code or data in this repo or find our work helpful, please consider giving a citation:
 ```
 @misc{zhang2024imperceptible,
-      title={Towards Imperceptible Backdoor Attack in Self-supervised Learning}, 
+      title={Invisible Backdoor Attack against Self-supervised Learning}, 
       author={Hanrong Zhang and Zhenting Wang and Tingxu Han and Mingyu Jin and Chenlu Zhan and Mengnan Du and Hongwei Wang and Shiqing Ma},
       year={2024},
       eprint={2405.14672},
