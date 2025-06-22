@@ -43,3 +43,8 @@ def run_finetune(gpu, encoder_usage_info, shadow_dataset, downstream_dataset, tr
 run_finetune(5, 'stl10', 'stl10', 'cifar10', 'trigger/stl10/ssim0.9182_psnr22.37_lp0.0263_wd0.702_color10.051.pt', 'airplane', 'stl10',256,0.1,5)
 # run_finetune(3, 'stl10', 'stl10', 'gtsrb', 'trigger/stl10/ssim0.9182_psnr22.37_lp0.0263_wd0.702_color10.051.pt', 'priority', 'stl10',256,0.1,5)
 # run_finetune(2, 'stl10', 'stl10', 'svhn', 'trigger/stl10/ssim0.9182_psnr22.37_lp0.0263_wd0.702_color10.051.pt', 'one', 'stl10',256,0.1,5)
+
+# run_finetune(1, 'cifar10', 'cifar10', 'stl10', 'trigger/cifar10/ssim0.9328_psnr22.50_lp0.0291_wd0.603_color11.353.pt', 'truck','cifar10',512,0.1,10)
+# run_finetune(1, 'cifar10', 'cifar10', 'gtsrb', 'trigger/cifar10/ssim0.9328_psnr22.50_lp0.0291_wd0.603_color11.353.pt', 'priority','cifar10',512,0.1,10)
+# run_finetune(5, 'cifar10', 'cifar10', 'svhn', 'trigger/cifar10/ssim0.9328_psnr22.50_lp0.0291_wd0.603_color11.353.pt', 'one','cifar10',512,0.1,10)
+# run_finetune(5, 'cifar10', 'cifar10', 'cifar10', 'trigger/cifar10/ssim0.9328_psnr22.50_lp0.0291_wd0.603_color11.353.pt', 'airplane','cifar10',512,0.1,10)
